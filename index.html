@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<title>Diagnóstico de Maturidade em Recrutamento & Seleção</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f5f5f5;
+margin:0;
+padding:0;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:40px;
+margin-top:40px;
+border-radius:8px;
+}
+
+button{
+background:#0066ff;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:5px;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+background:#004ecc;
+}
+
+.form-step{
+display:none;
+}
+
+.form-step.active{
+display:block;
+}
+
+.pergunta{
+margin-bottom:25px;
+}
+
+.radio-group label{
+margin-right:15px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- INTRODUÇÃO -->
+
+<div id="intro">
+
+<h1>Diagnóstico de Maturidade em Recrutamento & Seleção</h1>
+
+<h3>Descubra em poucos minutos onde está o gargalo do seu processo de R&S e o que priorizar pra mudar isso.</h3>
+
+<p>
+Quem está dentro do processo raramente enxerga onde ele trava. A Rheserva desenvolveu esse diagnóstico pra fazer essa leitura de fora: 21 perguntas, cinco dimensões analisadas, resultado imediato com as fragilidades e as principais oportunidades de melhoria do seu recrutamento.
+</p>
+
+<p>
+Também inclui um agente de IA personalizado. Ele lê o seu resultado e entrega orientações práticas baseadas no seu cenário.
+</p>
+
+<p><b>Esse formulário é pra quem convive com situações como:</b></p>
+
+<ul>
+<li>Vagas que ficam abertas semanas sem candidato aderente</li>
+<li>Processos que dependem demais de uma pessoa só</li>
+<li>Contratações que não duram</li>
+<li>Dificuldade em mostrar pro gestor onde está o problema</li>
+</ul>
+
+<p><b>Tempo estimado:</b> 7 a 10 minutos</p>
+<p><b>Resultado:</b> Diagnóstico gratuito e personalizado</p>
+
+<button onclick="startForm()">Começar o diagnóstico →</button>
+
+</div>
+
+<form id="formulario" style="display:none" novalidate>
+
+<!-- CAPTURA DE DADOS -->
+
+<div class="form-step active">
+
+<h2>Antes, vamos nos conhecer um pouquinho melhor</h2>
+
+<label>Qual o seu nome?</label>
+<input type="text" name="nome" required>
+
+<label>Qual o seu melhor e-mail?</label>
+<input type="email" name="email" required>
+
+<label>Qual o seu WhatsApp?</label>
+<input type="text" name="whatsapp">
+
+<label>Em qual empresa você trabalha?</label>
+<input type="text" name="empresa">
+
+<label>Qual o seu cargo?</label>
+<input type="text" name="cargo">
+
+<label>Quantos funcionários a empresa tem?</label>
+
+<select name="tamanho_empresa">
+<option>Até 50</option>
+<option>51 a 200</option>
+<option>201 a 500</option>
+<option>Acima de 500</option>
+</select>
+
+<button type="button" onclick="nextStep()">Próximo</button>
+
+</div>
+<!-- ESTRATÉGIA -->
+
+<div class="form-step">
+
+<h2>Estratégia e alinhamento (Peso 2)</h2>
+
+<div class="pergunta">
+<p>1. O recrutamento e seleção está conectado ao plano de crescimento da empresa.</p>
+<input type="radio" name="q1" value="1">1
+<input type="radio" name="q1" value="2">2
+<input type="radio" name="q1" value="3">3
+<input type="radio" name="q1" value="4">4
+<input type="radio" name="q1" value="5">5
+</div>
+
+<div class="pergunta">
+<p>2. Temos clareza dos perfis que precisaremos contratar nos próximos meses.</p>
+<input type="radio" name="q2" value="1">1
+<input type="radio" name="q2" value="2">2
+<input type="radio" name="q2" value="3">3
+<input type="radio" name="q2" value="4">4
+<input type="radio" name="q2" value="5">5
+</div>
+
+<div class="pergunta">
+<p>3. Existe um responsável claro por Recrutamento e Seleção.</p>
+<input type="radio" name="q3" value="1">1
+<input type="radio" name="q3" value="2">2
+<input type="radio" name="q3" value="3">3
+<input type="radio" name="q3" value="4">4
+<input type="radio" name="q3" value="5">5
+</div>
+
+<div class="pergunta">
+<p>4. Os líderes tratam vagas como prioridade.</p>
+<input type="radio" name="q4" value="1">1
+<input type="radio" name="q4" value="2">2
+<input type="radio" name="q4" value="3">3
+<input type="radio" name="q4" value="4">4
+<input type="radio" name="q4" value="5">5
+</div>
+
+<button type="button" onclick="prevStep()">Voltar</button> <button type="button" onclick="nextStep()">Próximo</button>
+
+</div>
+
+<!-- PROCESSOS -->
+
+<div class="form-step">
+
+<h2>Processos e padronização (Peso 3)</h2>
+
+<div class="pergunta">
+<p>5. Nosso processo de R&S tem etapas bem definidas.</p>
+<input type="radio" name="q5" value="1">1
+<input type="radio" name="q5" value="2">2
+<input type="radio" name="q5" value="3">3
+<input type="radio" name="q5" value="4">4
+<input type="radio" name="q5" value="5">5
+</div>
+
+<div class="pergunta">
+<p>6. Existe um fluxo padrão para as vagas.</p>
+<input type="radio" name="q6" value="1">1
+<input type="radio" name="q6" value="2">2
+<input type="radio" name="q6" value="3">3
+<input type="radio" name="q6" value="4">4
+<input type="radio" name="q6" value="5">5
+</div>
+
+<div class="pergunta">
+<p>7. Temos roteiros de entrevista.</p>
+<input type="radio" name="q7" value="1">1
+<input type="radio" name="q7" value="2">2
+<input type="radio" name="q7" value="3">3
+<input type="radio" name="q7" value="4">4
+<input type="radio" name="q7" value="5">5
+</div>
+
+<div class="pergunta">
+<p>8. Existem critérios claros para aprovar candidatos.</p>
+<input type="radio" name="q8" value="1">1
+<input type="radio" name="q8" value="2">2
+<input type="radio" name="q8" value="3">3
+<input type="radio" name="q8" value="4">4
+<input type="radio" name="q8" value="5">5
+</div>
+
+<div class="pergunta">
+<p>9. O processo está documentado.</p>
+<input type="radio" name="q9" value="1">1
+<input type="radio" name="q9" value="2">2
+<input type="radio" name="q9" value="3">3
+<input type="radio" name="q9" value="4">4
+<input type="radio" name="q9" value="5">5
+</div>
+
+<button type="button" onclick="prevStep()">Voltar</button> <button type="button" onclick="nextStep()">Próximo</button>
+
+</div>
+
+<!-- FERRAMENTAS -->
+
+<div class="form-step">
+
+<h2>Ferramentas e tecnologia (Peso 1)</h2>
+
+<div class="pergunta">
+<p>10. Usamos sistema ou planilhas para controlar vagas.</p>
+<input type="radio" name="q10" value="1">1
+<input type="radio" name="q10" value="2">2
+<input type="radio" name="q10" value="3">3
+<input type="radio" name="q10" value="4">4
+<input type="radio" name="q10" value="5">5
+</div>
+
+<div class="pergunta">
+<p>11. Conseguimos enxergar facilmente a etapa dos candidatos.</p>
+<input type="radio" name="q11" value="1">1
+<input type="radio" name="q11" value="2">2
+<input type="radio" name="q11" value="3">3
+<input type="radio" name="q11" value="4">4
+<input type="radio" name="q11" value="5">5
+</div>
+
+<div class="pergunta">
+<p>12. Temos modelos de comunicação com candidatos.</p>
+<input type="radio" name="q12" value="1">1
+<input type="radio" name="q12" value="2">2
+<input type="radio" name="q12" value="3">3
+<input type="radio" name="q12" value="4">4
+<input type="radio" name="q12" value="5">5
+</div>
+
+<div class="pergunta">
+<p>13. A tecnologia facilita o R&S.</p>
+<input type="radio" name="q13" value="1">1
+<input type="radio" name="q13" value="2">2
+<input type="radio" name="q13" value="3">3
+<input type="radio" name="q13" value="4">4
+<input type="radio" name="q13" value="5">5
+</div>
+
+<button type="button" onclick="prevStep()">Voltar</button> <button type="button" onclick="nextStep()">Próximo</button>
+
+</div>
+
+<!-- EXPERIENCIA -->
+
+<div class="form-step">
+
+<h2>Experiência de candidatos e gestores (Peso 1)</h2>
+
+<div class="pergunta">
+<p>14. Informamos os candidatos sobre o andamento.</p>
+<input type="radio" name="q14" value="1">1
+<input type="radio" name="q14" value="2">2
+<input type="radio" name="q14" value="3">3
+<input type="radio" name="q14" value="4">4
+<input type="radio" name="q14" value="5">5
+</div>
+
+<div class="pergunta">
+<p>15. Os prazos de retorno são cumpridos.</p>
+<input type="radio" name="q15" value="1">1
+<input type="radio" name="q15" value="2">2
+<input type="radio" name="q15" value="3">3
+<input type="radio" name="q15" value="4">4
+<input type="radio" name="q15" value="5">5
+</div>
+
+<div class="pergunta">
+<p>16. Gestores participam do processo alinhados.</p>
+<input type="radio" name="q16" value="1">1
+<input type="radio" name="q16" value="2">2
+<input type="radio" name="q16" value="3">3
+<input type="radio" name="q16" value="4">4
+<input type="radio" name="q16" value="5">5
+</div>
+
+<div class="pergunta">
+<p>17. Nosso R&S fortalece a imagem da empresa.</p>
+<input type="radio" name="q17" value="1">1
+<input type="radio" name="q17" value="2">2
+<input type="radio" name="q17" value="3">3
+<input type="radio" name="q17" value="4">4
+<input type="radio" name="q17" value="5">5
+</div>
+
+<button type="button" onclick="prevStep()">Voltar</button> <button type="button" onclick="nextStep()">Próximo</button>
+
+</div>
+
+<!-- METRICAS -->
+
+<div class="form-step">
+
+<h2>Métricas e melhoria contínua (Peso 2)</h2>
+
+<div class="pergunta">
+<p>18. Acompanhamos indicadores de R&S.</p>
+<input type="radio" name="q18" value="1">1
+<input type="radio" name="q18" value="2">2
+<input type="radio" name="q18" value="3">3
+<input type="radio" name="q18" value="4">4
+<input type="radio" name="q18" value="5">5
+</div>
+
+<div class="pergunta">
+<p>19. Sabemos quais canais trazem melhores candidatos.</p>
+<input type="radio" name="q19" value="1">1
+<input type="radio" name="q19" value="2">2
+<input type="radio" name="q19" value="3">3
+<input type="radio" name="q19" value="4">4
+<input type="radio" name="q19" value="5">5
+</div>
+
+<div class="pergunta">
+<p>20. Monitoramos a qualidade das contratações.</p>
+<input type="radio" name="q20" value="1">1
+<input type="radio" name="q20" value="2">2
+<input type="radio" name="q20" value="3">3
+<input type="radio" name="q20" value="4">4
+<input type="radio" name="q20" value="5">5
+</div>
+
+<div class="pergunta">
+<p>21. Revisamos o processo periodicamente.</p>
+<input type="radio" name="q21" value="1">1
+<input type="radio" name="q21" value="2">2
+<input type="radio" name="q21" value="3">3
+<input type="radio" name="q21" value="4">4
+<input type="radio" name="q21" value="5">5
+</div>
+
+<button type="button" onclick="prevStep()">Voltar</button> <button type="submit">Finalizar diagnóstico</button>
+
+</div>
+
+</form>
+
+</div>
+
+<script>
+
+let step = 0
+const steps = document.querySelectorAll(".form-step")
+
+function startForm(){
+document.getElementById("intro").style.display="none"
+document.getElementById("formulario").style.display="block"
+showStep()
+}
+
+function showStep(){
+steps.forEach((s,i)=>{
+s.classList.remove("active")
+if(i===step){
+s.classList.add("active")
+}
+})
+}
+
+function nextStep(){
+if(step < steps.length-1){
+step++
+showStep()
+}
+}
+
+function prevStep(){
+if(step > 0){
+step--
+showStep()
+}
+}
+
+showStep()
+
+/* --------------------------
+ENVIO DO FORMULÁRIO
+-------------------------- */
+
+document.getElementById("formulario").addEventListener("submit", async function(e){
+
+e.preventDefault()
+
+const formData = new FormData(this)
+
+const dados = Object.fromEntries(formData.entries())
+
+try{
+
+const response = await fetch("http://localhost:3000/salvar",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body: JSON.stringify(dados)
+})
+
+const resultado = await response.json()
+
+alert("Diagnóstico enviado com sucesso!")
+
+this.reset()
+
+step = 0
+showStep()
+
+}catch(erro){
+
+alert("Erro ao enviar formulário")
+
+console.error(erro)
+
+}
+
+})
+
+</script>
+
+</body>
+
+</html>
