@@ -6,16 +6,30 @@ const formData = new FormData(this)
 
 const dados = Object.fromEntries(formData.entries())
 
-const response = await fetch("http://localhost:3000/salvar", {
+try{
+
+const response = await fetch("https://webhookbi.rheserva.com.br/webhook", {
 method: "POST",
 headers: {
-"Content-Type": "application/json"
+"Content-Type": "application/json",
+"Authorization": "Bearer abcdefgh12345/5825tyoa@asecTTT!"
 },
 body: JSON.stringify(dados)
 })
 
+if(!response.ok){
+throw new Error("Erro na requisição")
+}
+
 const resultado = await response.json()
 
 alert("Resposta salva com sucesso!")
+
+}catch(erro){
+
+console.error(erro)
+alert("Erro ao enviar formulário")
+
+}
 
 })
