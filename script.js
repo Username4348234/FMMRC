@@ -6,7 +6,6 @@ const formData = new FormData(this)
 
 let dados = Object.fromEntries(formData.entries())
 
-// função para calcular média
 function media(perguntas){
 let soma = 0
 let qtd = 0
@@ -18,17 +17,15 @@ qtd++
 }
 })
 
-return qtd ? soma / qtd : 0
+return qtd ? soma/qtd : 0
 }
 
-// médias por sessão
 const estrategia = media(["q1","q2","q3","q4"])
 const processos = media(["q5","q6","q7","q8","q9"])
 const ferramentas = media(["q10","q11","q12","q13"])
 const experiencia = media(["q14","q15","q16","q17"])
 const metricas = media(["q18","q19","q20","q21"])
 
-// média ponderada
 const mediaFinal = (
 (estrategia * 2) +
 (processos * 3) +
@@ -37,23 +34,18 @@ const mediaFinal = (
 (metricas * 2)
 ) / 9
 
-// classificação
 let nivel = ""
 
 if(mediaFinal <= 2.4){
 nivel = "Iniciante"
-}
-else if(mediaFinal <= 3.4){
+}else if(mediaFinal <= 3.4){
 nivel = "Em evolução"
-}
-else if(mediaFinal <= 4.2){
+}else if(mediaFinal <= 4.2){
 nivel = "Estruturado"
-}
-else{
+}else{
 nivel = "Estratégico"
 }
 
-// adicionar resultados ao objeto
 dados.estrategia = estrategia.toFixed(2)
 dados.processos = processos.toFixed(2)
 dados.ferramentas = ferramentas.toFixed(2)
@@ -70,13 +62,13 @@ delete dados["q"+i]
 
 try{
 
-const response = await fetch("https://webhookbi.rheserva.com.br/webhook", {
-method: "POST",
-headers: {
-"Content-Type": "application/json",
-"Authorization": "Bearer 123456767899080testeprogpt"
+const response = await fetch("https://webhookbi.rheserva.com.br/webhook",{
+method:"POST",
+headers:{
+"Content-Type":"application/json",
+"Authorization":"Bearer 123456767899080testeprogpt"
 },
-body: JSON.stringify(dados)
+body:JSON.stringify(dados)
 })
 
 if(!response.ok){
@@ -85,11 +77,9 @@ throw new Error("Erro na requisição")
 
 alert("Diagnóstico enviado com sucesso!")
 
-}catch(erro){
-
-console.error(erro)
-alert("Erro ao enviar formulário")
-
+}catch(err){
+console.error(err)
+alert("Erro ao enviar")
 }
 
 })
