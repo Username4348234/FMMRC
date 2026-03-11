@@ -62,6 +62,8 @@ delete dados["q"+i]
 
 try{
 
+console.log(dados)
+
 const response = await fetch("https://webhookbi.rheserva.com.br/webhook",{
 method:"POST",
 headers:{
