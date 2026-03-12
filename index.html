@@ -510,6 +510,8 @@
 </form>
 </div>
 
+<script src="config.js"></script>
+
 <script>
   let step = 0;
   const steps = document.querySelectorAll(".form-step");
@@ -548,7 +550,6 @@
 
   showStep();
 
-  /* ---- ENVIO ---- */
   document.getElementById("formulario").addEventListener("submit", async function (e) {
     e.preventDefault();
 
@@ -591,11 +592,12 @@
     submitBtn.disabled = true;
 
     try {
-      const response = await fetch("https://webhookbi.rheserva.com.br/webhook", {
+
+      const response = await fetch(CONFIG.WEBHOOK_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer 123456767899080testeprogpt"
+          "Authorization": "Bearer " + CONFIG.TOKEN
         },
         body: JSON.stringify(dados)
       });
@@ -611,7 +613,8 @@
 
     } catch (err) {
       console.error(err);
-      document.getElementById("error-msg").style.display = "block"; setTimeout(() => document.getElementById("error-msg").style.display = "none", 5000);
+      document.getElementById("error-msg").style.display = "block";
+      setTimeout(() => document.getElementById("error-msg").style.display = "none", 5000);
     } finally {
       submitBtn.textContent = "Finalizar e ver diagnóstico →";
       submitBtn.disabled = false;
