@@ -3,7 +3,6 @@ document.getElementById("formulario").addEventListener("submit", async function(
 e.preventDefault()
 
 const formData = new FormData(this)
-
 let dados = Object.fromEntries(formData.entries())
 
 function media(perguntas){
@@ -46,23 +45,47 @@ nivel = "Estruturado"
 nivel = "Estratégico"
 }
 
+/* --- Identificar ponto forte e fraco --- */
+const dimensoes = [
+  { nome: "Estratégia", valor: estrategia },
+  { nome: "Processos", valor: processos },
+  { nome: "Ferramentas", valor: ferramentas },
+  { nome: "Experiência", valor: experiencia },
+  { nome: "Métricas", valor: metricas }
+];
+
+dimensoes.sort((a, b) => b.valor - a.valor);
+
+const pontoForte = dimensoes[0].nome;
+const pontoFraco = dimensoes[dimensoes.length - 1].nome;
+
+/* ---- Dados finais ---- */
+
 dados.estrategia = estrategia.toFixed(2)
 dados.processos = processos.toFixed(2)
 dados.ferramentas = ferramentas.toFixed(2)
 dados.experiencia = experiencia.toFixed(2)
 dados.metricas = metricas.toFixed(2)
-dados.media_final = mediaFinal.toFixed(2)
-dados.nivel_maturidade = nivel
-dados.data_envio = new Date().toISOString()
+dados.media_final = mediaFinal.toFixed(2);
+dados.nivel_maturidade = nivel;
+dados.ponto_forte = pontoForte;
+dados.ponto_fraco = pontoFraco;
+dados.data_envio = new Date().toISOString();
 
-// remover perguntas
 for(let i = 1; i <= 21; i++){
 delete dados["q"+i]
 }
 
+/* LOG PRA TESTE */
+console.log("JSON FINAL:", dados)
+
 try{
 
-console.log(dados)
+dados.ponto_critico = "teste_critico";
+dados.ponto_forte = "teste_forte";
+
+console.log(dados);
+
 
 const response = await fetch("https://webhookbi.rheserva.com.br/webhook",{
 method:"POST",

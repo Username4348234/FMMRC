@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-store">
   <title>Diagnóstico de Maturidade em R&S — Rheserva</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -19,8 +20,7 @@
     <!-- INTRODUÇÃO -->
     <div id="intro">
       <h1>Diagnóstico de Maturidade em Recrutamento &amp; Seleção</h1>
-      <h3>Descubra em poucos minutos onde está o gargalo do seu processo de R&amp;S e o que priorizar pra mudar isso.
-      </h3>
+      <h3>Descubra em poucos minutos onde está o gargalo do seu processo de R&amp;S e o que priorizar pra mudar isso.</h3>
       <p>Quem está dentro do processo raramente enxerga onde ele trava. A Rheserva desenvolveu esse diagnóstico pra
         fazer essa leitura de fora: 21 perguntas, cinco dimensões analisadas, resultado imediato com as fragilidades e
         as principais oportunidades de melhoria do seu recrutamento.</p>
@@ -42,7 +42,6 @@
         <button class="btn btn-primary" onclick="startForm()">Começar o diagnóstico <span>→</span></button>
       </div>
     </div>
-
 
     <!-- TELA DE CARREGAMENTO -->
     <div id="loading-screen" style="display:none">
@@ -80,41 +79,6 @@
         </div>
       </div>
     </div>
-
-    <!-- TELA DE SUCESSO -->
-    <div id="success-screen" style="display:none">
-      <div class="success-card">
-        <div class="success-icon">&#10003;</div>
-        <h2>Diagnóstico enviado com sucesso!</h2>
-        <p>Recebemos suas respostas e nosso time já está analisando o seu cenário de R&amp;S.</p>
-        <p class="success-sub">
-          📧 Enviamos seu diagnóstico completo para o <strong>e-mail que você informou</strong>.<br>
-          Verifique sua caixa de entrada — lá você encontrará as recomendações personalizadas para o seu processo de
-          R&amp;S.
-        </p>
-        <div class="success-divider"></div>
-        <div class="result-box">
-
-          <h3 class="result-title">Seu nível de maturidade em R&S</h3>
-
-          <div class="result-score">
-            <span id="nivel-maturidade">—</span>
-          </div>
-
-          <div class="result-bar">
-            <div class="result-bar-fill" id="score-bar"></div>
-          </div>
-
-          <div class="result-number">
-            Pontuação geral: <strong id="score-num">0.0</strong> / 5.0
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-
-
 
     <!-- FORMULÁRIO -->
     <form id="formulario" style="display:none" novalidate>
@@ -183,16 +147,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q1" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q1" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q1" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q1" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q1" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q1" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q1" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q1" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q1" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q1" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -203,16 +162,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q2" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q2" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q2" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q2" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q2" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q2" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q2" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q2" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q2" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q2" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -223,16 +177,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q3" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q3" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q3" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q3" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q3" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q3" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q3" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q3" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q3" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q3" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -243,16 +192,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q4" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q4" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q4" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q4" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q4" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q4" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q4" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q4" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q4" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q4" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -273,16 +217,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q5" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q5" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q5" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q5" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q5" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q5" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q5" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q5" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q5" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q5" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -293,16 +232,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q6" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q6" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q6" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q6" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q6" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q6" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q6" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q6" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q6" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q6" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -313,16 +247,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q7" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q7" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q7" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q7" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q7" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q7" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q7" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q7" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q7" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q7" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -333,16 +262,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q8" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q8" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q8" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q8" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q8" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q8" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q8" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q8" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q8" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q8" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -353,16 +277,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q9" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q9" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q9" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q9" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q9" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q9" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q9" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q9" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q9" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q9" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -383,16 +302,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q10" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q10" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q10" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q10" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q10" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q10" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q10" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q10" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q10" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q10" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -403,16 +317,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q11" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q11" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q11" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q11" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q11" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q11" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q11" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q11" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q11" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q11" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -423,16 +332,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q12" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q12" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q12" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q12" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q12" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q12" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q12" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q12" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q12" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q12" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -443,16 +347,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q13" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q13" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q13" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q13" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q13" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q13" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q13" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q13" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q13" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q13" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -473,16 +372,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q14" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q14" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q14" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q14" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q14" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q14" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q14" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q14" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q14" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q14" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -493,16 +387,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q15" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q15" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q15" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q15" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q15" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q15" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q15" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q15" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q15" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q15" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -513,16 +402,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q16" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q16" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q16" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q16" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q16" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q16" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q16" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q16" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q16" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q16" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -533,16 +417,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q17" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q17" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q17" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q17" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q17" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q17" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q17" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q17" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q17" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q17" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -563,16 +442,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q18" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q18" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q18" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q18" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q18" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q18" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q18" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q18" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q18" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q18" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -583,16 +457,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q19" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q19" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q19" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q19" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q19" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q19" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q19" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q19" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q19" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q19" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -603,16 +472,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q20" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q20" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q20" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q20" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q20" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q20" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q20" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q20" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q20" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q20" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -623,16 +487,11 @@
           <div class="radio-scale">
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
-              <label class="radio-option"><input type="radio" name="q21" value="1"><span
-                  class="radio-btn">1</span></label>
-              <label class="radio-option"><input type="radio" name="q21" value="2"><span
-                  class="radio-btn">2</span></label>
-              <label class="radio-option"><input type="radio" name="q21" value="3"><span
-                  class="radio-btn">3</span></label>
-              <label class="radio-option"><input type="radio" name="q21" value="4"><span
-                  class="radio-btn">4</span></label>
-              <label class="radio-option"><input type="radio" name="q21" value="5"><span
-                  class="radio-btn">5</span></label>
+              <label class="radio-option"><input type="radio" name="q21" value="1"><span class="radio-btn">1</span></label>
+              <label class="radio-option"><input type="radio" name="q21" value="2"><span class="radio-btn">2</span></label>
+              <label class="radio-option"><input type="radio" name="q21" value="3"><span class="radio-btn">3</span></label>
+              <label class="radio-option"><input type="radio" name="q21" value="4"><span class="radio-btn">4</span></label>
+              <label class="radio-option"><input type="radio" name="q21" value="5"><span class="radio-btn">5</span></label>
             </div>
             <span class="scale-label right">Concordo</span>
           </div>
@@ -696,7 +555,6 @@
       document.getElementById("progress-label").textContent = `Etapa ${step + 1} de ${totalSteps}`;
     }
 
-    /* ---- Helpers de erro inline ---- */
     function setError(id, msg) {
       const el = document.getElementById(id);
       if (!el) return;
@@ -710,7 +568,6 @@
 
     function clearError(id) { setError(id, ""); }
 
-    /* Limpa erro ao interagir */
     document.addEventListener("input", e => {
       const field = e.target.closest(".field-group");
       const err = field?.querySelector(".field-error");
@@ -723,7 +580,6 @@
       }
     });
 
-    /* ---- Validação por etapa ---- */
     function nextStep() {
       const currentStep = steps[step];
       let valid = true;
@@ -738,20 +594,12 @@
 
       currentStep.querySelectorAll("input:not([type=radio]), select").forEach(input => {
         const val = input.value.trim();
-        if (!val) {
-          setError("err-" + input.name, labels[input.name] || "Campo obrigatório.");
-          valid = false;
-          return;
-        }
+        if (!val) { setError("err-" + input.name, labels[input.name] || "Campo obrigatório."); valid = false; return; }
         if (input.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
-          setError("err-" + input.name, "Informe um e-mail válido. Ex: nome@empresa.com");
-          valid = false;
-          return;
+          setError("err-" + input.name, "Informe um e-mail válido. Ex: nome@empresa.com"); valid = false; return;
         }
         if (input.name === "whatsapp" && val.replace(/\D/g, "").length < 10) {
-          setError("err-" + input.name, "Informe um WhatsApp válido. Ex: (11) 99999-9999");
-          valid = false;
-          return;
+          setError("err-" + input.name, "Informe um WhatsApp válido. Ex: (11) 99999-9999"); valid = false; return;
         }
         clearError("err-" + input.name);
       });
@@ -762,12 +610,8 @@
         if (r.checked) radioGroups[r.name] = true;
       });
       for (const name in radioGroups) {
-        if (!radioGroups[name]) {
-          setError("err-" + name, "Selecione uma opção para continuar.");
-          valid = false;
-        } else {
-          clearError("err-" + name);
-        }
+        if (!radioGroups[name]) { setError("err-" + name, "Selecione uma opção para continuar."); valid = false; }
+        else clearError("err-" + name);
       }
 
       if (!valid) return;
@@ -793,63 +637,75 @@
         return qtd ? soma / qtd : 0;
       }
 
-      const estrategia = media(["q1", "q2", "q3", "q4"]);
-      const processos = media(["q5", "q6", "q7", "q8", "q9"]);
+      const estrategia  = media(["q1", "q2", "q3", "q4"]);
+      const processos   = media(["q5", "q6", "q7", "q8", "q9"]);
       const ferramentas = media(["q10", "q11", "q12", "q13"]);
       const experiencia = media(["q14", "q15", "q16", "q17"]);
-      const metricas = media(["q18", "q19", "q20", "q21"]);
-      const mediaFinal = ((estrategia * 2) + (processos * 3) + (ferramentas * 1) + (experiencia * 1) + (metricas * 2)) / 9;
+      const metricas    = media(["q18", "q19", "q20", "q21"]);
+      const mediaFinal  = ((estrategia * 2) + (processos * 3) + (ferramentas * 1) + (experiencia * 1) + (metricas * 2)) / 9;
+
+      const dimensoes = [
+        { nome: "Estratégia",  valor: estrategia },
+        { nome: "Processos",   valor: processos },
+        { nome: "Ferramentas", valor: ferramentas },
+        { nome: "Experiência", valor: experiencia },
+        { nome: "Métricas",    valor: metricas }
+      ];
+
+      const maiorNota = Math.max(...dimensoes.map(d => d.valor));
+      const menorNota = Math.min(...dimensoes.map(d => d.valor));
+
+      const ponto_forte = dimensoes
+        .filter(d => d.valor.toFixed(2) === maiorNota.toFixed(2))
+        .map(d => `${d.nome} (${d.valor.toFixed(2)})`).join(" • ");
+
+      const ponto_fraco = dimensoes
+        .filter(d => d.valor.toFixed(2) === menorNota.toFixed(2))
+        .map(d => `${d.nome} (${d.valor.toFixed(2)})`).join(" • ");
 
       let nivel = mediaFinal <= 2.4 ? "Iniciante" : mediaFinal <= 3.4 ? "Em evolução" : mediaFinal <= 4.2 ? "Estruturado" : "Estratégico";
 
-      dados.estrategia = estrategia.toFixed(2);
-      dados.processos = processos.toFixed(2);
-      dados.ferramentas = ferramentas.toFixed(2);
-      dados.experiencia = experiencia.toFixed(2);
-      dados.metricas = metricas.toFixed(2);
-      dados.media_final = mediaFinal.toFixed(2);
+      dados.estrategia       = estrategia.toFixed(2);
+      dados.processos        = processos.toFixed(2);
+      dados.ferramentas      = ferramentas.toFixed(2);
+      dados.experiencia      = experiencia.toFixed(2);
+      dados.metricas         = metricas.toFixed(2);
+      dados.media_final      = mediaFinal.toFixed(2);
       dados.nivel_maturidade = nivel;
-      dados.data_envio = new Date().toISOString();
+      dados.ponto_forte      = ponto_forte;
+      dados.ponto_fraco      = ponto_fraco;
+      dados.data_envio       = new Date().toISOString();
       for (let i = 1; i <= 21; i++) { delete dados["q" + i]; }
 
       const submitBtn = document.querySelector(".btn-submit");
       submitBtn.textContent = "Enviando...";
       submitBtn.disabled = true;
 
-      /* MOSTRAR RESULTADO NA TELA */
-
-      document.getElementById("nivel-maturidade").textContent = nivel;
-      document.getElementById("score-num").textContent = mediaFinal.toFixed(1);
-
-      const pct = (mediaFinal / 5) * 100;
-      document.getElementById("score-bar").style.width = pct + "%";
-
-
-
-
-      // Mostra tela de loading
       document.getElementById("formulario").style.display = "none";
       document.getElementById("loading-screen").style.display = "block";
       window.scrollTo({ top: 0, behavior: 'smooth' });
       animateLoadingSteps();
 
       try {
-        const response = await fetch(CONFIG.WEBHOOK_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Authorization": "Bearer " + CONFIG.TOKEN },
-          body: JSON.stringify(dados)
-        });
+        const [response] = await Promise.all([
+          fetch(CONFIG.WEBHOOK_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Authorization": "Bearer " + CONFIG.TOKEN },
+            body: JSON.stringify(dados)
+          }),
+          new Promise(res => setTimeout(res, 3200))
+        ]);
+
         if (!response.ok) throw new Error("Erro");
 
-        // Espera mínima de 3s pra exibir o loading completo
-        await new Promise(res => setTimeout(res, 3200));
+        const params = new URLSearchParams({
+          nivel:       nivel,
+          pontuacao:   mediaFinal.toFixed(1),
+          ponto_forte: ponto_forte,
+          ponto_fraco: ponto_fraco
+        });
 
-        this.reset();
-        step = 0;
-        showStep();
-        document.getElementById("loading-screen").style.display = "none";
-        document.getElementById("success-screen").style.display = "block";
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.location.href = "/resultado.html?" + params.toString();
 
       } catch (err) {
         console.error(err);
@@ -870,28 +726,25 @@
       whatsappInput.addEventListener("input", function (e) {
         let v = e.target.value.replace(/\D/g, '');
         if (v.length > 11) v = v.slice(0, 11);
-        if (v.length > 6) v = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
+        if (v.length > 6)      v = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
         else if (v.length > 2) v = `(${v.slice(0, 2)}) ${v.slice(2)}`;
         e.target.value = v;
       });
     }
 
-
-    /* ---- Animação das etapas de loading ---- */
+    /* ---- Animação loading ---- */
     function animateLoadingSteps() {
-      const steps = [
+      const loadingSteps = [
         { id: "ls-1", delay: 400 },
         { id: "ls-2", delay: 1100 },
         { id: "ls-3", delay: 1900 },
         { id: "ls-4", delay: 2700 },
       ];
-      // Reset
-      steps.forEach(s => {
+      loadingSteps.forEach(s => {
         const el = document.getElementById(s.id);
         el.classList.remove("done", "active");
       });
-      // Animate
-      steps.forEach((s, i) => {
+      loadingSteps.forEach(s => {
         setTimeout(() => {
           const el = document.getElementById(s.id);
           el.classList.add("active");
@@ -903,5 +756,4 @@
   </script>
 
 </body>
-
 </html>

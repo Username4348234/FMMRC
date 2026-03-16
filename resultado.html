@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-store">
+  <title>Resultado do Diagnóstico — Rheserva</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    /* Se o usuário recarregar /resultado.html, redireciona pro início */
+    if (sessionStorage.getItem('recarregou') === '1') {
+      sessionStorage.removeItem('recarregou');
+      window.location.replace('/');
+    }
+    window.addEventListener('beforeunload', function () {
+      sessionStorage.setItem('recarregou', '1');
+    });
+  </script>
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="page-header">
+      <div class="brand-tag">Rheserva · Diagnóstico Gratuito</div>
+    </header>
+
+    <div class="success-card">
+      <div class="success-icon">&#10003;</div>
+      <h2>Diagnóstico concluído!</h2>
+      <p>Analisamos suas respostas nas cinco dimensões de maturidade em R&amp;S.</p>
+      <p class="success-sub">
+        📧 Enviamos seu diagnóstico completo para o <strong>e-mail que você informou</strong>.<br>
+        Verifique sua caixa de entrada — lá você encontrará as recomendações personalizadas para o seu processo de R&amp;S.
+      </p>
+
+      <div class="success-divider"></div>
+
+      <div class="result-box">
+        <h3 class="result-title">Seu nível de maturidade em R&amp;S</h3>
+
+        <div class="result-score">
+          <span id="nivel-maturidade">—</span>
+        </div>
+
+        <div class="result-bar">
+          <div class="result-bar-fill" id="score-bar"></div>
+        </div>
+
+        <div class="result-number">
+          Pontuação geral: <strong id="score-num">0.0</strong> / 5.0
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const p = new URLSearchParams(window.location.search);
+
+    const nivel     = p.get("nivel")       || "—";
+    const pontuacao = parseFloat(p.get("pontuacao")) || 0;
+
+    document.getElementById("nivel-maturidade").textContent = nivel;
+    document.getElementById("score-num").textContent        = pontuacao.toFixed(1);
+
+    setTimeout(() => {
+      document.getElementById("score-bar").style.width = ((pontuacao / 5) * 100).toFixed(1) + "%";
+    }, 200);
+  </script>
+
+</body>
+</html>
