@@ -7,10 +7,10 @@
   <title>Resultado do Diagnóstico — Rheserva</title>
   <link rel="stylesheet" href="style.css">
   <script>
-    /* Se o usuário recarregar /resultado.html, redireciona pro início */
+    /* Se o usuário recarregar /resultado.html, volta pro início do formulário */
     if (sessionStorage.getItem('recarregou') === '1') {
       sessionStorage.removeItem('recarregou');
-      window.location.replace('/');
+      window.location.replace('/FMMRC/');
     }
     window.addEventListener('beforeunload', function () {
       sessionStorage.setItem('recarregou', '1');
