@@ -818,8 +818,11 @@
         }, "*");
 
         // depois redireciona normalmente dentro do iframe
-        window.location.href = "/FMMRC/resultado.html?" + params.toString();
-
+        window.parent.postMessage({
+          tipo: "finalizou",
+          url: "/formulario-maturidade-resultado/?" + params.toString()
+        }, "*");
+        
       } catch (err) {
         console.error(err);
         document.getElementById("loading-screen").style.display = "none";
