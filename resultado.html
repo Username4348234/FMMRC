@@ -7,16 +7,7 @@
   <meta http-equiv="Cache-Control" content="no-store">
   <title>Resultado do Diagnóstico — Rheserva</title>
   <link rel="stylesheet" href="style.css">
-  <script>
-    /* Se o usuário recarregar /resultado.html, volta pro início do formulário */
-    if (sessionStorage.getItem('recarregou') === '1') {
-      sessionStorage.removeItem('recarregou');
-      window.location.replace('/FMMRC/');
-    }
-    window.addEventListener('beforeunload', function () {
-      sessionStorage.setItem('recarregou', '1');
-    });
-  </script>
+  
 </head>
 
 <body>
@@ -60,12 +51,6 @@
 
   <script>
 
-
-    window.parent.postMessage({
-      tipo: "mudanca-url",
-      url: "/formulario/resultado"
-    }, "*");
-    
     const p = new URLSearchParams(window.location.search);
 
     const nivel = p.get("nivel") || "—";
