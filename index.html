@@ -811,17 +811,11 @@
           ponto_fraco: ponto_fraco
         });
 
-        // avisa o site pai (WordPress)
-        window.parent.postMessage({
-          tipo: "mudanca-url",
-          url: "/formulario/resultado"
-        }, "*");
-
-        // depois redireciona normalmente dentro do iframe
         window.parent.postMessage({
           tipo: "finalizou",
-          url: "/formulario-maturidade-resultado/?" + params.toString()
+          params: params.toString()
         }, "*");
+        
 
       } catch (err) {
         console.error(err);
@@ -832,9 +826,6 @@
         setTimeout(() => { errMsg.style.display = "none"; }, 5000);
       } finally {
         submitBtn.textContent = "Finalizar e ver diagnóstico →";
-        window.parent.postMessage({
-          tipo: "finalizou"
-        }, "*");
         submitBtn.disabled = false;
       }
     });
