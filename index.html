@@ -641,7 +641,16 @@
     function startForm() {
       document.getElementById("intro").style.display = "none";
       document.getElementById("formulario").style.display = "block";
+
+      // 🔥 ajusta altura inicial
+      window.parent.postMessage({
+        tipo: "resize",
+        altura: 1200
+      }, "*");
+
       updateProgress();
+      showStep();
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -650,7 +659,29 @@
         s.classList.remove("active");
         if (i === step) s.classList.add("active");
       });
+
       updateProgress();
+
+      // 🔥 alturas por etapa (ajuste como quiser)
+      const alturas = [
+        1200, // step 0 - identificação
+        1300, // step 1 - estratégia
+        1400, // step 2 - processos
+        1300, // step 3 - ferramentas
+        1300, // step 4 - experiência
+        1400, // step 5 - métricas
+        1000  // step 6 - final
+      ];
+
+      const alturaAtual = alturas[step] || 1200;
+
+      // 🔥 manda altura pro iframe (WordPress)
+      window.parent.postMessage({
+        tipo: "resize",
+        altura: alturaAtual
+      }, "*");
+
+      // 🔥 sobe pro topo
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -866,30 +897,6 @@
       });
     }
 
-
-
-
-    function enviarAltura() {
-      const altura = document.body.scrollHeight;
-      window.parent.postMessage({
-        tipo: "resize",
-        altura: altura
-      }, "*");
-    }
-
-    window.addEventListener("load", enviarAltura);
-    window.addEventListener("resize", enviarAltura);
-
-    function enviarAltura() {
-      const altura = document.body.scrollHeight;
-      window.parent.postMessage({
-        tipo: "resize",
-        altura: altura
-      }, "*");
-    }
-
-    window.addEventListener("load", enviarAltura);
-    window.addEventListener("resize", enviarAltura); observer.observe(document.body, { childList: true, subtree: true });
 
   </script>
 
