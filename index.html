@@ -734,6 +734,9 @@
     document.getElementById("formulario").addEventListener("submit", async function (e) {
       e.preventDefault();
 
+      // 🔥 força subir pro topo
+      window.scrollTo({ top: 0, behavior: 'smooth' });  
+
       const formData = new FormData(this);
       let dados = Object.fromEntries(formData.entries());
 
@@ -862,6 +865,8 @@
         }, s.delay);
       });
     }
+
+
 
 
   </script>
