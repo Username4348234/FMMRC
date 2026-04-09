@@ -639,6 +639,7 @@
     const totalSteps = steps.length;
 
     function startForm() {
+      notifyScroll(); /* ← NOVO */
       document.getElementById("intro").style.display = "none";
       document.getElementById("formulario").style.display = "block";
       updateProgress();
@@ -721,11 +722,11 @@
       }
 
       if (!valid) return;
-      if (step < totalSteps - 1) { step++; showStep(); }
+      if (step < totalSteps - 1) { step++; showStep(); notifyScroll(); } /* ← NOVO */
     }
 
     function prevStep() {
-      if (step > 0) { step--; showStep(); }
+      if (step > 0) { step--; showStep(); notifyScroll(); } /* ← NOVO */
     }
 
     showStep();
