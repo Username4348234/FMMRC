@@ -735,7 +735,7 @@
       e.preventDefault();
 
       // 🔥 força subir pro topo
-      window.scrollTo({ top: 0, behavior: 'smooth' });  
+      window.scrollTo({ top: 0, behavior: 'smooth' });
 
       const formData = new FormData(this);
       let dados = Object.fromEntries(formData.entries());
@@ -868,6 +868,20 @@
 
 
 
+    
+    function enviarAltura() {
+      const altura = document.body.scrollHeight;
+      window.parent.postMessage({
+        tipo: "resize",
+        altura: altura
+      }, "*");
+    }
+
+    window.addEventListener("load", enviarAltura);
+    window.addEventListener("resize", enviarAltura);
+
+    const observer = new MutationObserver(enviarAltura);
+    observer.observe(document.body, { childList: true, subtree: true });
 
   </script>
 
