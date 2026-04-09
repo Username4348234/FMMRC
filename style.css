@@ -8,11 +8,11 @@
   --yellow-dark: #e6a800;
   --navy: #1a0a0f;
   --navy-mid: #2d1019;
-  --cream: #ffffff;
+  --cream: #fff9f0;
   --white: #ffffff;
-  --gray-100: #ffffff;
-  --gray-200: #ffffff;
-  --gray-400: #f2eee6;
+  --gray-100: #f9f2f4;
+  --gray-200: #f0e3e7;
+  --gray-400: #b08090;
   --gray-600: #6b3a4a;
   --gray-800: #2d1019;
   --success: #10b981;
@@ -1028,4 +1028,7 @@ body::after {
   max-width: 500px;
   margin: auto;
 }
+
+
+
 
