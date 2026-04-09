@@ -815,7 +815,7 @@
           tipo: "finalizou",
           params: params.toString()
         }, "*");
-        
+
 
       } catch (err) {
         console.error(err);
@@ -863,6 +863,19 @@
       });
     }
 
+
+
+    function sendHeight() {
+      const h = document.body.scrollHeight;
+      window.parent.postMessage({ iframeHeight: h }, "*");
+    }
+
+    window.addEventListener("load", sendHeight);
+
+    const observer = new MutationObserver(sendHeight);
+    observer.observe(document.body, {
+      childList: true, subtree: true, attributes: true
+    });
   </script>
 
 </body>
