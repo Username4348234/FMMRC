@@ -866,16 +866,12 @@
 
 
     function sendHeight() {
-      const h = document.body.scrollHeight;
-      window.parent.postMessage({ iframeHeight: h }, "*");
-    }
-
-    window.addEventListener("load", sendHeight);
-
-    const observer = new MutationObserver(sendHeight);
-    observer.observe(document.body, {
-      childList: true, subtree: true, attributes: true
-    });
+    window.parent.postMessage({ iframeHeight: document.body.scrollHeight }, "*");
+  }
+  window.addEventListener("load", sendHeight);
+  new MutationObserver(sendHeight).observe(document.body, {
+    childList: true, subtree: true, attributes: true
+  });
   </script>
 
 </body>
