@@ -695,7 +695,7 @@ body::after {
 
 .success-sub {
   font-size: 14px !important;
-  color: var(--gray-400) !important;
+  color: black;
 }
 
 .success-divider {
@@ -1028,6 +1028,7 @@ body::after {
   max-width: 500px;
   margin: auto;
 }
+
 
 
 
