@@ -172,7 +172,7 @@
             <span class="scale-label">Discordo</span>
             <div class="radio-options">
               <label class="radio-option"><input type="radio" name="q2" value="1"><span
-                  class="radio-btn">1</span></label>
+                  class="radio-btn">2</span></label>
               <label class="radio-option"><input type="radio" name="q2" value="2"><span
                   class="radio-btn">2</span></label>
               <label class="radio-option"><input type="radio" name="q2" value="3"><span
@@ -661,11 +661,34 @@
     const steps = document.querySelectorAll(".form-step");
     const totalSteps = steps.length;
 
+    /* ─────────────────────────────────────────────
+       COMUNICAÇÃO COM O WORDPRESS (iframe pai)
+       ───────────────────────────────────────────── */
+
+    // Envia a altura atual do documento para o WordPress ajustar o iframe
+    function enviarAltura() {
+      const altura = document.documentElement.scrollHeight;
+      window.parent.postMessage({ tipo: "altura", valor: altura }, "*");
+    }
+
+    // Avisa o WordPress para rolar a página até o topo do iframe
+    function enviarScrollTopo() {
+      window.parent.postMessage({ tipo: "novaEtapa" }, "*");
+    }
+
+    // Observa mudanças de tamanho no body e reenvia a altura automaticamente
+    new ResizeObserver(enviarAltura).observe(document.body);
+
+    /* ─────────────────────────────────────────────
+       LÓGICA DO FORMULÁRIO
+       ───────────────────────────────────────────── */
+
     function startForm() {
       document.getElementById("intro").style.display = "none";
       document.getElementById("formulario").style.display = "block";
       updateProgress();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      enviarScrollTopo();
+      setTimeout(enviarAltura, 100);
     }
 
     function showStep() {
@@ -674,7 +697,8 @@
         if (i === step) s.classList.add("active");
       });
       updateProgress();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      enviarScrollTopo();
+      setTimeout(enviarAltura, 100);
     }
 
     function updateProgress() {
@@ -753,12 +777,13 @@
 
     showStep();
 
-    /* ---- Envio ---- */
+    /* ─────────────────────────────────────────────
+       ENVIO DO FORMULÁRIO
+       ───────────────────────────────────────────── */
     document.getElementById("formulario").addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      // 🔥 força subir pro topo
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      enviarScrollTopo();
 
       const formData = new FormData(this);
       let dados = Object.fromEntries(formData.entries());
@@ -815,7 +840,8 @@
 
       document.getElementById("formulario").style.display = "none";
       document.getElementById("loading-screen").style.display = "block";
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      enviarScrollTopo();
+      setTimeout(enviarAltura, 100);
       animateLoadingSteps();
 
       try {
@@ -842,13 +868,14 @@
           params: params.toString()
         }, "*");
 
-
       } catch (err) {
         console.error(err);
         document.getElementById("loading-screen").style.display = "none";
         document.getElementById("formulario").style.display = "block";
         const errMsg = document.getElementById("error-msg");
         errMsg.style.display = "block";
+        enviarScrollTopo();
+        setTimeout(enviarAltura, 100);
         setTimeout(() => { errMsg.style.display = "none"; }, 5000);
       } finally {
         submitBtn.textContent = "Finalizar e ver diagnóstico →";
@@ -856,7 +883,9 @@
       }
     });
 
-    /* ---- Máscara WhatsApp ---- */
+    /* ─────────────────────────────────────────────
+       MÁSCARA WHATSAPP
+       ───────────────────────────────────────────── */
     const whatsappInput = document.querySelector("input[name='whatsapp']");
     if (whatsappInput) {
       whatsappInput.addEventListener("input", function (e) {
@@ -868,7 +897,9 @@
       });
     }
 
-    /* ---- Animação loading ---- */
+    /* ─────────────────────────────────────────────
+       ANIMAÇÃO LOADING
+       ───────────────────────────────────────────── */
     function animateLoadingSteps() {
       const loadingSteps = [
         { id: "ls-1", delay: 400 },
@@ -889,7 +920,8 @@
       });
     }
 
-
+    // Envia a altura inicial ao carregar a página
+    window.addEventListener("load", enviarAltura);
 
   </script>
 
